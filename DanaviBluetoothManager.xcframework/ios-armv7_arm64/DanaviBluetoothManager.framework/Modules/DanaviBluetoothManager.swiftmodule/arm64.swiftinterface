@@ -1,0 +1,60 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
+// swift-module-flags: -target arm64-apple-ios9.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name DanaviBluetoothManager
+import CoreBluetooth
+@_exported import DanaviBluetoothManager
+import Foundation
+import Swift
+public struct EmittedEvent {
+  public var mac: Swift.String
+  public var action: Swift.String
+  public var deviceType: Swift.String
+  public var value: Any
+}
+public struct Temperature {
+  public var temperature: Swift.Double
+  public var unit: Swift.String
+}
+public let EVENT_BLUETOOTH_DANAVI: Swift.String
+public let ACTION_BLUETOOTH_STATE_CHANGE: Swift.String
+public let ACTION_DEVICE_DISCOVERED: Swift.String
+public let ACTION_SCAN_FINISHED: Swift.String
+public let ACTION_DEVICE_CONNECTED: Swift.String
+public let ACTION_DEVICE_DISCONNECTED: Swift.String
+public let ACTION_DEVICE_FAILED_TO_CONNECT: Swift.String
+public let ACTION_DANAVI_THERMOMETER_MEASUREMENT: Swift.String
+public let DANAVI_THERMOMETER_NAME: Swift.String
+public let DANAVI_THERMOMETER_TYPE: Swift.String
+public let THERMOMETER_SERVICE_CBUUID: CoreBluetooth.CBUUID
+public let THERMOMETER_CHARACTERISTIC_CBUUID: CoreBluetooth.CBUUID
+public let CELCIUS_UNIT: Swift.String
+public let FAHRENHEIT_UNIT: Swift.String
+public func setTimeout(callback: @escaping () -> Swift.Void, delayInSec: Swift.Double)
+public func celciusToFahrenheit(value: Swift.Double) -> Swift.Double
+@objc @_inheritsConvenienceInitializers public class BluetoothManager : ObjectiveC.NSObject, CoreBluetooth.CBPeripheralDelegate, CoreBluetooth.CBCentralManagerDelegate {
+  final public let events: DanaviBluetoothManager.EventManager
+  @objc override dynamic public init()
+  public func scanDevices(deviceType type: Swift.String, timeout: Swift.Double? = nil)
+  public func stopScan()
+  public func connectDevice(mac: Swift.String)
+  public func startDanaviThermometerMeasurement()
+  @objc public func centralManagerDidUpdateState(_ central: CoreBluetooth.CBCentralManager)
+  @objc public func centralManager(_ central: CoreBluetooth.CBCentralManager, didDiscover peripheral: CoreBluetooth.CBPeripheral, advertisementData: [Swift.String : Any], rssi RSSI: Foundation.NSNumber)
+  @objc public func centralManager(_ central: CoreBluetooth.CBCentralManager, didConnect peripheral: CoreBluetooth.CBPeripheral)
+  @objc public func centralManager(_ central: CoreBluetooth.CBCentralManager, didDisconnectPeripheral peripheral: CoreBluetooth.CBPeripheral, error: Swift.Error?)
+  @objc public func centralManager(_ central: CoreBluetooth.CBCentralManager, didFailToConnect peripheral: CoreBluetooth.CBPeripheral, error: Swift.Error?)
+  @objc public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didDiscoverServices error: Swift.Error?)
+  @objc public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didDiscoverCharacteristicsFor service: CoreBluetooth.CBService, error: Swift.Error?)
+  @objc public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didUpdateValueFor characteristic: CoreBluetooth.CBCharacteristic, error: Swift.Error?)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class EventManager {
+  public func listenTo(eventName: Swift.String, action: @escaping (() -> ()))
+  public func listenTo(eventName: Swift.String, action: @escaping ((Any?) -> ()))
+  public func removeListeners(eventNameToRemoveOrNil: Swift.String?)
+  public func trigger(eventName: Swift.String, information: Any? = nil)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class EventListenerAction {
+  @objc deinit
+}

@@ -1,0 +1,11 @@
+framework module DanaviBluetoothManager {
+  umbrella header "DanaviBluetoothManager.h"
+
+  export *
+  module * { export * }
+}
+
+module DanaviBluetoothManager.Swift {
+    header "DanaviBluetoothManager-Swift.h"
+    requires objc
+}
