@@ -23,6 +23,7 @@ public let ACTION_DEVICE_CONNECTED: Swift.String
 public let ACTION_DEVICE_DISCONNECTED: Swift.String
 public let ACTION_DEVICE_FAILED_TO_CONNECT: Swift.String
 public let ACTION_DANAVI_THERMOMETER_MEASUREMENT: Swift.String
+public let ACTION_DEVICE_READY_TO_TAKE_MEASUREMENT: Swift.String
 public let DANAVI_THERMOMETER_NAME: Swift.String
 public let DANAVI_THERMOMETER_TYPE: Swift.String
 public let THERMOMETER_SERVICE_CBUUID: CoreBluetooth.CBUUID
@@ -37,6 +38,7 @@ public func celciusToFahrenheit(value: Swift.Double) -> Swift.Double
   public func scanDevices(deviceType type: Swift.String, timeout: Swift.Double? = nil)
   public func stopScan()
   public func connectDevice(mac: Swift.String)
+  public func disconnectDevice(mac: Swift.String)
   public func startDanaviThermometerMeasurement()
   @objc public func centralManagerDidUpdateState(_ central: CoreBluetooth.CBCentralManager)
   @objc public func centralManager(_ central: CoreBluetooth.CBCentralManager, didDiscover peripheral: CoreBluetooth.CBPeripheral, advertisementData: [Swift.String : Any], rssi RSSI: Foundation.NSNumber)
