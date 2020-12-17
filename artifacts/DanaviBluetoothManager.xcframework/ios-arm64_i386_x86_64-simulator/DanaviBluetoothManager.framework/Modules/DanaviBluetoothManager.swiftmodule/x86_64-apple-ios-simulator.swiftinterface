@@ -1,12 +1,12 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
 // swift-module-flags: -target x86_64-apple-ios9.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name DanaviBluetoothManager
 import CoreBluetooth
 @_exported import DanaviBluetoothManager
 import Foundation
 import Swift
 public func setTimeout(callback: @escaping () -> Swift.Void, delayInSec: Swift.Double)
-public func setInterval(selector: ObjectiveC.Selector, interval: Swift.Double, target: Any) -> Foundation.Timer
+public func setInterval(selector: ObjectiveC.Selector, interval: Swift.Double, target: Any, userInfo: Any? = nil) -> Foundation.Timer
 public struct EmittedEvent {
   public var mac: Swift.String
   public var action: Swift.String
@@ -21,6 +21,10 @@ public struct OximeterMeasurement {
   public var bloodOxygen: Swift.Int
   public var heartRate: Swift.Int
   public var pi: Swift.Int
+}
+public struct SpirometerMeasurement {
+  public var fev1: Swift.Double
+  public var pef: Swift.Double
 }
 public let EVENT_BLUETOOTH_DANAVI: Swift.String
 public let ACTION_BLUETOOTH_STATE_CHANGE: Swift.String
@@ -45,6 +49,13 @@ public let DANAVI_OXIMETER_CHARACTERISTIC_CBUUID: CoreBluetooth.CBUUID
 public let DANAVI_OXIMETER_FILENAME: Swift.String
 public let ACTION_OXIMETER_TIMER: Swift.String
 public let ACTION_OXIMETER_MEASUREMENT_DONE: Swift.String
+public let ACTION_SPIROMETER_MEASUREMENT: Swift.String
+public let DANAVI_SPIROMETER_NAME: Swift.String
+public let DANAVI_SPIROMETER_TYPE: Swift.String
+public let ACTION_DANAVI_SPIROMETER_MEASUREMENT_TAKEN: Swift.String
+public let DANAVI_SPIROMETER_SERVICE_CBUUID: CoreBluetooth.CBUUID
+public let DANAVI_SPIROMETER_READ_CHARACTERISTIC_CBUUID: CoreBluetooth.CBUUID
+public let DANAVI_SPIROMETER_WRITE_CHARACTERISTIC_CBUUID: CoreBluetooth.CBUUID
 @objc @_inheritsConvenienceInitializers public class BluetoothManager : ObjectiveC.NSObject, CoreBluetooth.CBPeripheralDelegate, CoreBluetooth.CBCentralManagerDelegate {
   final public let events: DanaviBluetoothManager.EventManager
   @objc override dynamic public init()
@@ -54,6 +65,8 @@ public let ACTION_OXIMETER_MEASUREMENT_DONE: Swift.String
   public func stopScan()
   public func connectDevice(mac: Swift.String)
   public func disconnectDevice(mac: Swift.String)
+  public func startDanaviSpirometerMeasurement()
+  @objc public func _sendPrepareTransferCommand(_ timer: Foundation.Timer)
   public func startDanaviThermometerMeasurement()
   public func startDanaviOximeterMeasurement(writeToFile: Swift.Bool? = false, withTimer: Swift.Bool? = false, measurementLength: Swift.Int? = 300, thinningInterval: Swift.Int? = 20)
   @objc public func _notifyOximeterTimer()
@@ -66,6 +79,8 @@ public let ACTION_OXIMETER_MEASUREMENT_DONE: Swift.String
   @objc public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didDiscoverServices error: Swift.Error?)
   @objc public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didDiscoverCharacteristicsFor service: CoreBluetooth.CBService, error: Swift.Error?)
   @objc public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didUpdateValueFor characteristic: CoreBluetooth.CBCharacteristic, error: Swift.Error?)
+  @objc public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didUpdateNotificationStateFor characteristic: CoreBluetooth.CBCharacteristic, error: Swift.Error?)
+  @objc public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didWriteValueFor characteristic: CoreBluetooth.CBCharacteristic, error: Swift.Error?)
   public func retrieveOximeterData() -> Swift.String
   @objc deinit
 }
