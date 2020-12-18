@@ -22,11 +22,11 @@
 		</data>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm.swiftinterface</key>
 		<data>
-		e+JC8LElE2spJS0T+hsaPOrz1Gw=
+		3unnY8aQA6MbxECO3u1rLp1S/pc=
 		</data>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm.swiftmodule</key>
 		<data>
-		gdrtYdmEytquHum4Vj5sE69eLDQ=
+		wKm4xY6l8X2bSO9HGKBsjhfTJyU=
 		</data>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -34,11 +34,11 @@
 		</data>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		5aE0+pyuN+tw4EZE++Tszn491PI=
+		rKAN/OOmfhdkuX0F7eDRBHdNgVk=
 		</data>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		LZ40ZH96ChFgLkPO0n/4u7wI2QU=
+		QZ3P8hY8bgYAn4fj4HWDnGyGjwc=
 		</data>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		5aE0+pyuN+tw4EZE++Tszn491PI=
+		rKAN/OOmfhdkuX0F7eDRBHdNgVk=
 		</data>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		LZ40ZH96ChFgLkPO0n/4u7wI2QU=
+		QZ3P8hY8bgYAn4fj4HWDnGyGjwc=
 		</data>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<data>
@@ -58,11 +58,11 @@
 		</data>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/armv7-apple-ios.swiftinterface</key>
 		<data>
-		e+JC8LElE2spJS0T+hsaPOrz1Gw=
+		3unnY8aQA6MbxECO3u1rLp1S/pc=
 		</data>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<data>
-		gdrtYdmEytquHum4Vj5sE69eLDQ=
+		wKm4xY6l8X2bSO9HGKBsjhfTJyU=
 		</data>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/armv7.swiftdoc</key>
 		<data>
@@ -70,11 +70,11 @@
 		</data>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/armv7.swiftinterface</key>
 		<data>
-		e+JC8LElE2spJS0T+hsaPOrz1Gw=
+		3unnY8aQA6MbxECO3u1rLp1S/pc=
 		</data>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/armv7.swiftmodule</key>
 		<data>
-		gdrtYdmEytquHum4Vj5sE69eLDQ=
+		wKm4xY6l8X2bSO9HGKBsjhfTJyU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -120,22 +120,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			e+JC8LElE2spJS0T+hsaPOrz1Gw=
+			3unnY8aQA6MbxECO3u1rLp1S/pc=
 			</data>
 			<key>hash2</key>
 			<data>
-			LDtWDshWuZqQmAFu7HpUXGSRad2/xoxo9Rwac2PW9R8=
+			ixMiV6ARuqj8xV7E4EOZukYgDrg29sK9NUKxrbp+Lso=
 			</data>
 		</dict>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			gdrtYdmEytquHum4Vj5sE69eLDQ=
+			wKm4xY6l8X2bSO9HGKBsjhfTJyU=
 			</data>
 			<key>hash2</key>
 			<data>
-			aq4zGlB/x0KsPW3pNMBAuLHQUN1K69/KmXOIoxg9Lac=
+			tkuehcIIXUUsBJB0b/yADHEvt5WX0XSouKz6BTEc+pk=
 			</data>
 		</dict>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm64-apple-ios.swiftdoc</key>
@@ -153,22 +153,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5aE0+pyuN+tw4EZE++Tszn491PI=
+			rKAN/OOmfhdkuX0F7eDRBHdNgVk=
 			</data>
 			<key>hash2</key>
 			<data>
-			1NrkJG0JSzByh1ZKNrztOOWqCMQMV45PTep8aA6zdhs=
+			hX+10TUZns5t8Iu4YodYqIc7CwHqib3uOKps5XLPr6g=
 			</data>
 		</dict>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			LZ40ZH96ChFgLkPO0n/4u7wI2QU=
+			QZ3P8hY8bgYAn4fj4HWDnGyGjwc=
 			</data>
 			<key>hash2</key>
 			<data>
-			oOY1o9zdDamc1XdFnvh06LtEZVftiFbEDC15A+7fZvw=
+			DvS2fmstQ87bVM0iNWGrDLvteMKqeBbjA7N7Y0WeEw0=
 			</data>
 		</dict>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm64.swiftdoc</key>
@@ -186,22 +186,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5aE0+pyuN+tw4EZE++Tszn491PI=
+			rKAN/OOmfhdkuX0F7eDRBHdNgVk=
 			</data>
 			<key>hash2</key>
 			<data>
-			1NrkJG0JSzByh1ZKNrztOOWqCMQMV45PTep8aA6zdhs=
+			hX+10TUZns5t8Iu4YodYqIc7CwHqib3uOKps5XLPr6g=
 			</data>
 		</dict>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			LZ40ZH96ChFgLkPO0n/4u7wI2QU=
+			QZ3P8hY8bgYAn4fj4HWDnGyGjwc=
 			</data>
 			<key>hash2</key>
 			<data>
-			oOY1o9zdDamc1XdFnvh06LtEZVftiFbEDC15A+7fZvw=
+			DvS2fmstQ87bVM0iNWGrDLvteMKqeBbjA7N7Y0WeEw0=
 			</data>
 		</dict>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/armv7-apple-ios.swiftdoc</key>
@@ -219,22 +219,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			e+JC8LElE2spJS0T+hsaPOrz1Gw=
+			3unnY8aQA6MbxECO3u1rLp1S/pc=
 			</data>
 			<key>hash2</key>
 			<data>
-			LDtWDshWuZqQmAFu7HpUXGSRad2/xoxo9Rwac2PW9R8=
+			ixMiV6ARuqj8xV7E4EOZukYgDrg29sK9NUKxrbp+Lso=
 			</data>
 		</dict>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			gdrtYdmEytquHum4Vj5sE69eLDQ=
+			wKm4xY6l8X2bSO9HGKBsjhfTJyU=
 			</data>
 			<key>hash2</key>
 			<data>
-			aq4zGlB/x0KsPW3pNMBAuLHQUN1K69/KmXOIoxg9Lac=
+			tkuehcIIXUUsBJB0b/yADHEvt5WX0XSouKz6BTEc+pk=
 			</data>
 		</dict>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/armv7.swiftdoc</key>
@@ -252,22 +252,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			e+JC8LElE2spJS0T+hsaPOrz1Gw=
+			3unnY8aQA6MbxECO3u1rLp1S/pc=
 			</data>
 			<key>hash2</key>
 			<data>
-			LDtWDshWuZqQmAFu7HpUXGSRad2/xoxo9Rwac2PW9R8=
+			ixMiV6ARuqj8xV7E4EOZukYgDrg29sK9NUKxrbp+Lso=
 			</data>
 		</dict>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/armv7.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			gdrtYdmEytquHum4Vj5sE69eLDQ=
+			wKm4xY6l8X2bSO9HGKBsjhfTJyU=
 			</data>
 			<key>hash2</key>
 			<data>
-			aq4zGlB/x0KsPW3pNMBAuLHQUN1K69/KmXOIoxg9Lac=
+			tkuehcIIXUUsBJB0b/yADHEvt5WX0XSouKz6BTEc+pk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

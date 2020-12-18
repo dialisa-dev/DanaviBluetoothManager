@@ -16,15 +16,18 @@ public struct EmittedEvent {
 public struct Temperature {
   public var temperature: Swift.Double
   public var unit: Swift.String
+  public var timestamp: Swift.Int64
 }
 public struct OximeterMeasurement {
   public var bloodOxygen: Swift.Int
   public var heartRate: Swift.Int
   public var pi: Swift.Int
+  public var timestamp: Swift.Int64
 }
 public struct SpirometerMeasurement {
   public var fev1: Swift.Double
   public var pef: Swift.Double
+  public var timestamp: Swift.Int64
 }
 public let EVENT_BLUETOOTH_DANAVI: Swift.String
 public let ACTION_BLUETOOTH_STATE_CHANGE: Swift.String
@@ -82,6 +85,7 @@ public let DANAVI_SPIROMETER_WRITE_CHARACTERISTIC_CBUUID: CoreBluetooth.CBUUID
   @objc public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didUpdateNotificationStateFor characteristic: CoreBluetooth.CBCharacteristic, error: Swift.Error?)
   @objc public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didWriteValueFor characteristic: CoreBluetooth.CBCharacteristic, error: Swift.Error?)
   public func retrieveOximeterData() -> Swift.String
+  public func deleteOximeterData() -> Swift.Bool
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class EventManager {
