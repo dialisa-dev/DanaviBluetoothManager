@@ -31,6 +31,11 @@ public struct OximeterMeasurement {
     public var heartRate: Int = 0;
     public var pi: Int = 0;
 }
+
+public struct SpirometerMeasurement {
+    public var fev1: Double = 0.0;
+    public var pef: Double = 0.0;
+}
 ```
 
 ## API
@@ -108,6 +113,14 @@ Call this function to stop sending oximeter measurement. It will send ```Emitted
 public func retrieveOximeterData() -> String
 ```
 Call this function to retrieve oximeter data from the temporary file. In order for this to work, must set ```writeToFile``` parameter in ```startDanaviOximeterMeasurement``` function to ```true```. On failure, it will return ```-1,-1,-1```.
+
+### 9. Start DANAVI Spirometer measurement
+```
+public func startDanaviSpirometerMeasurement()
+```
+Call this function to start spirometer measurement. Please wait for ```EmittedEvent(mac: "0759B832-91A5-FDE8-C6D3-0B5552DA5B46", action: "ACTION_DEVICE_READY_TO_TAKE_MEASUREMENT", deviceType: "DANAVI Spirometer", value: "")``` then prompt the user to take measurement. After successful measurement, you will hear 1 beep from the spirometer device and the measurement will show up on the spirometer's screen. It will take a few seconds (~5 seconds) until the measurement is sent to the app.
+
+On successful measurement, it will send ```EmittedEvent(mac: "0759B832-91A5-FDE8-C6D3-0B5552DA5B46", action: "ACTION_SPIROMETER_MEASUREMENT", deviceType: "DANAVI Spirometer", value: DanaviBluetoothManager.SpirometerMeasurement(fev1: 2.2600000000000002, pef: 361.0))```. PEF is in L/min and FEV1 is in L.
 
 ## Workflow
 ### 1. Import the library
@@ -241,29 +254,45 @@ class ViewController: UIViewController {
     // WRAPPER FUNCTION TO HANDLE ALL EVENTS SENT FROM BLUETOOTH MANAGER
     func onReceiveEvent(information: Any?) {
         let info = information as! EmittedEvent
-        print("\n\(info)")
         if (info.action == ACTION_BLUETOOTH_STATE_CHANGE) {
+            print("\n\(info)")
             onBluetoothStateChange(event: info)
         } else if (info.action == ACTION_DEVICE_DISCOVERED) {
+            print("\n\(info)")
             onDeviceDiscovered(event: info)
         } else if (info.action == ACTION_SCAN_FINISHED) {
+            print("\n\(info)")
             onScanFinished(event: info)
         } else if (info.action == ACTION_DEVICE_CONNECTED) {
+            print("\n\(info)")
             onDeviceConnected(event: info)
         } else if (info.action == ACTION_DEVICE_DISCONNECTED) {
+            print("\n\(info)")
             onDeviceDisconnected(event: info)
         } else if (info.action == ACTION_DEVICE_FAILED_TO_CONNECT) {
+            print("\n\(info)")
             onDeviceFailedToConnect(event: info)
         } else if (info.action == ACTION_DANAVI_THERMOMETER_MEASUREMENT) {
+            print("\n\(info)")
             handleReceiveTemperatureMeasurement(event: info)
         } else if (info.action == ACTION_DEVICE_READY_TO_TAKE_MEASUREMENT) {
+            print("\n\(info)")
             handleReadyTakeMeasurement()
         } else if (info.action == ACTION_OXIMETER_LIVE_DATA) {
+            print("\n\(info)")
             handleReceiveOximeterMeasurement(event: info)
         } else if (info.action == ACTION_OXIMETER_TIMER) {
+            //print("\n\(info)")
             handleOximeterTimer(event: info)
         } else if (info.action == ACTION_OXIMETER_MEASUREMENT_DONE) {
+            print("\n\(info)")
             handleOximeterMeasurementDone()
+        } else if (info.action == ACTION_DANAVI_SPIROMETER_MEASUREMENT_TAKEN) {
+            print("\n\(info)")
+            handleSpirometerMeasurementTaken(event: info)
+        } else if (info.action == ACTION_SPIROMETER_MEASUREMENT) {
+            print("\n\(info)")
+            handleSpirometerMeasurement(event: info)
         }
     }
     
@@ -272,7 +301,7 @@ class ViewController: UIViewController {
         if (event.value as! String == "PoweredOn") {
             // IF BLUETOOTH STATE IS POWERED ON, THEN READY TO SCAN DEVICES
             //bluetoothManager.scanDevices(deviceType: DANAVI_EAR_THERMOMETER_TYPE, timeout: 5.0)
-            bluetoothManager.scanDevices(deviceType: DANAVI_OXIMETER_TYPE, timeout: 5.0)
+            bluetoothManager.scanDevices(deviceType: DANAVI_SPIROMETER_TYPE, timeout: 5.0)
         } else {
             // NEED TO HANDLE -- BLUETOOTH STATE IS NOT ON
         }
@@ -299,8 +328,11 @@ class ViewController: UIViewController {
         // IF DEVICE IS CONNECTED, THEN START MEASUREMENT
         if (event.deviceType == DANAVI_EAR_THERMOMETER_TYPE) {
             bluetoothManager.startDanaviThermometerMeasurement()
+            //bluetoothManager.disconnectDevice(mac: event.mac)
         } else if (event.deviceType == DANAVI_OXIMETER_TYPE) {
             bluetoothManager.startDanaviOximeterMeasurement(writeToFile: true, withTimer: true, measurementLength: 10, thinningInterval: 20)
+        } else if (event.deviceType == DANAVI_SPIROMETER_TYPE) {
+            bluetoothManager.startDanaviSpirometerMeasurement()
         }
     }
     
@@ -333,15 +365,27 @@ class ViewController: UIViewController {
     }
     
     func handleOximeterTimer(event: EmittedEvent) {
-        // UPDATE UI: SHOW THE OXIMETER MEASUREMENT REMAINING TIME
+        // UPDATE UI TO SHOW THE OXIMETER MEASUREMENT REMAINING TIME
         let remainingTime = event.value
         print(remainingTime)
     }
     
     func handleOximeterMeasurementDone() {
-        // UPDATE UI: PROMPT USER THAT THEY HAVE FINISHED THE MEASUREMENT
+        // UPDATE UI
+        // PROMPT USER THAT THEY HAVE FINISHED THE MEASUREMENT
         let data = bluetoothManager.retrieveOximeterData().split(whereSeparator: \.isNewline)
         print("Total recorded measurement: \(data.count)\n\(data)")
     }
+    
+    func handleSpirometerMeasurementTaken(event: EmittedEvent) {
+        // UPDATE UI
+    }
+    
+    func handleSpirometerMeasurement(event: EmittedEvent) {
+        // UPDATE UI
+        let measurement = event.value as! SpirometerMeasurement
+        print("FEV1: \(measurement.fev1), PEF: \(measurement.pef)")
+    }
 }
+
 ```
