@@ -1,12 +1,65 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
 // swift-module-flags: -target armv7-apple-ios9.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name DanaviBluetoothManager
 import CoreBluetooth
 @_exported import DanaviBluetoothManager
 import Foundation
+import MinttiSmarthoSDK
 import Swift
+@objc @_inheritsConvenienceInitializers public class MinttiVisionManager : ObjectiveC.NSObject, DanaviBluetoothManager.sdkHealthMoniterDelegate {
+  public var _monitorDataTransmissionManager: DanaviBluetoothManager.SDKHealthMoniter?
+  public var _minttiVisionType: Swift.String
+  public var _minttiVisionMeasuring: Swift.Bool
+  public var _minttiVisionReady: Swift.Bool
+  public var _minttiVisionConnected: Swift.Bool
+  public var _minttiVisionDevice: CoreBluetooth.CBPeripheral?
+  final public let events: DanaviBluetoothManager.EventManager
+  @objc override dynamic public init()
+  public func scanDevices(deviceType type: Swift.String, autoConnect: Swift.Bool, timeout: Swift.Double? = 10.0)
+  public func stopScan()
+  public func connectDevice(mac: Swift.String)
+  public func disconnectDevice(mac: Swift.String)
+  public func startMinttiVisionMeasurement(_ deviceType: Swift.String)
+  public func stopMinttiVisionMeasurement()
+  public func notifyMinttiVisionReady()
+  @objc public func didScanedPeripherals(_ foundPeripherals: Foundation.NSMutableArray!)
+  @objc public func didConnect(_ peripheral: CoreBluetooth.CBPeripheral!)
+  @objc public func disconnectPeripheral(_ peripheral: CoreBluetooth.CBPeripheral!)
+  @objc public func receiveBatteryData(_ state: DanaviBluetoothManager.BATTERYSTATE, batteryValue value: Swift.Double)
+  @objc public func didBluetoothServiceReady(_ peripheral: CoreBluetooth.CBPeripheral!)
+  @objc public func didBluetoothBatteryServiceReady(_ peripheral: CoreBluetooth.CBPeripheral!)
+  @objc public func receiveThermometerData(_ temperature: Swift.Double)
+  @objc public func receiveOximetryData(_ oxy: Swift.Double, andHeartRate heartRate: Swift.Int32)
+  @objc public func receiveOximetryWave(_ oxyWave: Swift.Double)
+  @objc public func didStopOximetryMeasure()
+  @objc public func receiveBloodPressure(_ sys: Swift.Int32, andDiastolic_pressure dia: Swift.Int32, andHeart_beat heartRate: Swift.Int32)
+  @objc public func bloodPressureAbnormal(with type: DanaviBluetoothManager.BPAbnornalType)
+  public func getBgPaperCaliperCodes() -> [Any]
+  public func setBgPaperCaliperCode(_ caliperCode: Swift.String)
+  @objc public func receiveBloodSugar(_ msgtype: DanaviBluetoothManager.MSGTYPE, andRow row: Foundation.NSNumber!)
+  @objc public func receiveECGDataFingerTouch(_ isTouch: Swift.Bool)
+  @objc public func receiveECGDataRRmax(_ rrMax: Swift.Int32)
+  @objc public func receiveECGDataRRMin(_ rrMin: Swift.Int32)
+  @objc public func receiveECGDataHRV(_ hrv: Swift.Int32)
+  @objc public func receiveECGDataMood(_ mood: Swift.Int32)
+  @objc public func receiveECGDataSmoothedWave(_ smoothedWave: Swift.Int32)
+  @objc public func receiveECGDataHeartRate(_ heartRate: Swift.Int32)
+  @objc public func receiveECGDataBreathRate(_ breathRate: Swift.Int32)
+  @objc public func receiveECGDDidEnd()
+  public func enableBluetoothLogging()
+  public func disableBluetoothLogging()
+  @objc deinit
+}
+public struct OximeterWave {
+  public var wave: Swift.Double
+  public var timestamp: Swift.Int64
+}
 public func setTimeout(callback: @escaping () -> Swift.Void, delayInSec: Swift.Double)
 public func setInterval(selector: ObjectiveC.Selector, interval: Swift.Double, target: Any, userInfo: Any? = nil) -> Foundation.Timer
+public struct StethoscopeBattery {
+  public var timestamp: Swift.Int64
+  public var battery: Swift.Int32
+}
 public struct EmittedEvent {
   public var mac: Swift.String
   public var action: Swift.String
@@ -29,12 +82,32 @@ public struct SpirometerMeasurement {
   public var pef: Swift.Double
   public var timestamp: Swift.Int64
 }
+public struct DeviceBattery {
+  public var battery: Swift.Double
+  public var timestamp: Swift.Int64
+}
+public struct BloodGlucoseMeasurement {
+  public var blood_glucose: Swift.Double
+  public var timestamp: Swift.Int64
+}
+public struct BloodPressureMeasurement {
+  public var sys: Swift.Int
+  public var dia: Swift.Int
+  public var heartRate: Swift.Int
+  public var timestamp: Swift.Int64
+}
+public struct ErrorCode {
+  public var errorCode: Swift.String
+  public var errorMessage: Swift.String
+  public var timestamp: Swift.Int64
+}
 public let EVENT_BLUETOOTH_DANAVI: Swift.String
 public let ACTION_BLUETOOTH_STATE_CHANGE: Swift.String
 public let ACTION_DEVICE_DISCOVERED: Swift.String
 public let ACTION_SCAN_FINISHED: Swift.String
 public let ACTION_DEVICE_CONNECTED: Swift.String
 public let ACTION_DEVICE_DISCONNECTED: Swift.String
+public let ACTION_DEVICE_LOST_CONNECTION: Swift.String
 public let ACTION_DEVICE_FAILED_TO_CONNECT: Swift.String
 public let ACTION_DANAVI_THERMOMETER_MEASUREMENT: Swift.String
 public let ACTION_DEVICE_READY_TO_TAKE_MEASUREMENT: Swift.String
@@ -45,6 +118,7 @@ public let THERMOMETER_CHARACTERISTIC_CBUUID: CoreBluetooth.CBUUID
 public let CELCIUS_UNIT: Swift.String
 public let FAHRENHEIT_UNIT: Swift.String
 public let ACTION_OXIMETER_LIVE_DATA: Swift.String
+public let ACTION_OXIMETER_WAVE_DATA: Swift.String
 public let DANAVI_OXIMETER_NAME: Swift.String
 public let DANAVI_OXIMETER_TYPE: Swift.String
 public let DANAVI_OXIMETER_SERVICE_CBUUID: CoreBluetooth.CBUUID
@@ -59,21 +133,99 @@ public let ACTION_DANAVI_SPIROMETER_MEASUREMENT_TAKEN: Swift.String
 public let DANAVI_SPIROMETER_SERVICE_CBUUID: CoreBluetooth.CBUUID
 public let DANAVI_SPIROMETER_READ_CHARACTERISTIC_CBUUID: CoreBluetooth.CBUUID
 public let DANAVI_SPIROMETER_WRITE_CHARACTERISTIC_CBUUID: CoreBluetooth.CBUUID
-@objc @_inheritsConvenienceInitializers public class BluetoothManager : ObjectiveC.NSObject, CoreBluetooth.CBPeripheralDelegate, CoreBluetooth.CBCentralManagerDelegate {
+public let MINTTI_VISION_NAME: Swift.String
+public let MINTTI_VISION_OXIMETER_TYPE: Swift.String
+public let MINTTI_VISION_BP_TYPE: Swift.String
+public let MINTTI_VISION_BG_TYPE: Swift.String
+public let MINTTI_VISION_ECG_TYPE: Swift.String
+public let MINTTI_VISION_THERMOMETER_TYPE: Swift.String
+public let ACTION_TEMPERATURE_MEASUREMENT: Swift.String
+public let ACTION_BLOOD_PRESSURE_MEASUREMENT: Swift.String
+public let ACTION_MEASUREMENT_ERROR: Swift.String
+public let ACTION_BLOOD_GLUCOSE_MEASUREMENT: Swift.String
+public let ACTION_BG_PAPER_IN: Swift.String
+public let ACTION_BG_PAPER_READY: Swift.String
+public let ACTION_BG_BLOOD_SAMPLE_DETECTING: Swift.String
+public let ACTION_EXCEPTION_BG_PAPER_MISSING: Swift.String
+public let ACTION_EXCEPTION_BG_PAPER_USED: Swift.String
+public let ACTION_EXCEPTION_BG_PAPER_OUT_TESTING: Swift.String
+public let ACTION_EXCEPTION_TIMEOUT_CHECK_BLOOD_SAMPLE: Swift.String
+public let ACTION_EXCEPTION_TIMEOUT_CALCULATE_BLOOD_SAMPLE: Swift.String
+public let ACTION_DEVICE_BATTERY_VALUE: Swift.String
+public let ACTION_DEVICE_BATTERY_CHARGING: Swift.String
+public let ERROR_CODE_BP_LEAK: Swift.String
+public let ERROR_CODE_BP_INTERRUPTED: Swift.String
+public let ERROR_UNKNOWN: Swift.String
+@objc @_inheritsConvenienceInitializers public class BluetoothManager : ObjectiveC.NSObject, CoreBluetooth.CBPeripheralDelegate, CoreBluetooth.CBCentralManagerDelegate, MinttiSmarthoSDK.MinttiBleManagerDelegate {
+  public var _monitorDataTransmissionManager: DanaviBluetoothManager.SDKHealthMoniter!
+  public var _minttiVisionType: Swift.String
+  public var _minttiVisionMeasuring: Swift.Bool
+  public var _minttiVisionReady: Swift.Bool
+  public var _minttiVisionConnected: Swift.Bool
+  public var _minttiVisionDevice: CoreBluetooth.CBPeripheral?
   final public let events: DanaviBluetoothManager.EventManager
   @objc override dynamic public init()
+  public func onTcpStateChange(anyHashable: Any)
+  public func startMinttiVisionMeasurement(_ deviceType: Swift.String)
+  public func stopMinttiVisionMeasurement()
+  public func notifyMinttiVisionReady()
+  public func didScanedPeripherals(_ foundPeripherals: Foundation.NSMutableArray!)
+  public func didConnect(_ peripheral: CoreBluetooth.CBPeripheral!)
+  public func disconnectPeripheral(_ peripheral: CoreBluetooth.CBPeripheral!)
+  public func receiveBatteryData(_ state: DanaviBluetoothManager.BATTERYSTATE, batteryValue value: Swift.Double)
+  public func receiveThermometerData(_ temperature: Swift.Double)
+  public func receiveOximetryData(_ oxy: Swift.Double, andHeartRate heartRate: Swift.Int32)
+  public func receiveOximetryWave(_ oxyWave: Swift.Double)
+  public func didStopOximetryMeasure()
+  public func receiveBloodPressure(_ sys: Swift.Int32, andDiastolic_pressure dia: Swift.Int32, andHeart_beat heartRate: Swift.Int32)
+  public func bloodPressureAbnormal(with type: DanaviBluetoothManager.BPAbnornalType)
+  public func setBgPaperCaliperCode(_ caliperCode: Swift.String)
+  public func receiveBloodSugar(_ msgtype: DanaviBluetoothManager.MSGTYPE, andRow row: Foundation.NSNumber!)
+  public func receiveECGDataRRmax(_ rrMax: Swift.Int32)
+  public func receiveECGDataRRMin(_ rrMin: Swift.Int32)
+  public func receiveECGDataHRV(_ hrv: Swift.Int32)
+  public func receiveECGDataMood(_ mood: Swift.Int32)
+  public func receiveECGDataSmoothedWave(_ smoothedWave: Swift.Int32)
+  public func receiveECGDataHeartRate(_ heartRate: Swift.Int32)
+  public func receiveECGDataBreathRate(_ breathRate: Swift.Int32)
+  public func receiveECGDDidEnd()
   public func enableBluetoothLogging()
   public func disableBluetoothLogging()
   public func scanDevices(deviceType type: Swift.String, timeout: Swift.Double? = 10)
   public func stopScan()
   public func connectDevice(mac: Swift.String)
   public func disconnectDevice(mac: Swift.String)
+  public func destroy()
+  public func startDanaviStethoscopeMeasurement(withSound: Swift.Bool, saveData: Swift.Bool)
+  public func stopDanaviStethoscopeMeasurement()
+  public func playStethoscopeSound()
+  public func stopStethoscopeSound()
+  public func createStethoscopeWavFile(data: [Swift.UInt16])
+  public func getStethoscopeDataFilenames() -> [Swift.String]
+  public func deleteStethoscopeData(filename: Swift.String) -> Swift.Bool
+  public func deleteAllStethoscopeData() -> Swift.Bool
+  public func playStethoscopeWavFile(filename: Swift.String) -> Swift.Bool
+  @objc public func minttiBleManager(onScanResult peripheralUUID: Foundation.UUID, name: Swift.String, rssi: Foundation.NSNumber)
+  @objc public func minttiBleManager(onConnectStateChanged state: Swift.Bool)
+  @objc public func minttiBleManager(onReadParamSuccess param: Swift.UInt16)
+  @objc public func minttiBleManager(onBleStateChanaged state: Swift.Bool)
+  @objc public func minttiBleManager(onAudioResultData resultData: Foundation.Data)
+  @objc public func minttiBleManager(onAudioSpkData spkData: Foundation.Data)
+  @objc public func minttiBleManager(onAudioMicData micData: Foundation.Data)
+  @objc public func minttiBleManager(onBatteryLevelChanged level: Swift.Int32)
+  @objc public func minttiBleManager(onEchoModeChanged curMode: MinttiSmarthoSDK.ECHO_MODE)
+  @objc public func minttiBleManager(onHeartRateChanged hr: Swift.Int32)
+  @objc public func minttiBleManager(onReadVersionSuccess version: Swift.String)
+  @objc public func minttiBleManagerOnStopGetAudioData()
+  @objc public func minttiBleManagerOnStartGetAudioData()
   public func startDanaviSpirometerMeasurement()
   @objc public func _sendPrepareTransferCommand(_ timer: Foundation.Timer)
   public func startDanaviThermometerMeasurement()
   public func startDanaviOximeterMeasurement(writeToFile: Swift.Bool? = false, withTimer: Swift.Bool? = false, measurementLength: Swift.Int? = 300, thinningInterval: Swift.Int? = 20)
-  @objc public func _notifyOximeterTimer()
   public func stopDanaviOximeterMeasurement()
+  public func retrieveOximeterData() -> Swift.String
+  public func deleteOximeterData() -> Swift.Bool
+  @objc public func _notifyOximeterTimer()
   @objc public func centralManagerDidUpdateState(_ central: CoreBluetooth.CBCentralManager)
   @objc public func centralManager(_ central: CoreBluetooth.CBCentralManager, didDiscover peripheral: CoreBluetooth.CBPeripheral, advertisementData: [Swift.String : Any], rssi RSSI: Foundation.NSNumber)
   @objc public func centralManager(_ central: CoreBluetooth.CBCentralManager, didConnect peripheral: CoreBluetooth.CBPeripheral)
@@ -84,10 +236,19 @@ public let DANAVI_SPIROMETER_WRITE_CHARACTERISTIC_CBUUID: CoreBluetooth.CBUUID
   @objc public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didUpdateValueFor characteristic: CoreBluetooth.CBCharacteristic, error: Swift.Error?)
   @objc public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didUpdateNotificationStateFor characteristic: CoreBluetooth.CBCharacteristic, error: Swift.Error?)
   @objc public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didWriteValueFor characteristic: CoreBluetooth.CBCharacteristic, error: Swift.Error?)
-  public func retrieveOximeterData() -> Swift.String
-  public func deleteOximeterData() -> Swift.Bool
   @objc deinit
 }
+public struct StethoscopeData {
+  public var timestamp: Swift.Int64
+  public var shortData: Foundation.Data?
+  public var byteData: Foundation.Data?
+}
+public let DANAVI_STETHOSCOPE_NAME: Swift.String
+public let DANAVI_STETHOSCOPE_TYPE: Swift.String
+public let ACTION_STETHOSCOPE_LIVE_DATA: Swift.String
+public let ACTION_STETHOSCOPE_MIC_DATA: Swift.String
+public let ACTION_STETHOSCOPE_SPK_DATA: Swift.String
+public let ACTION_STETHOSCOPE_BATTERY: Swift.String
 @_hasMissingDesignatedInitializers public class EventManager {
   public func listenTo(eventName: Swift.String, action: @escaping (() -> ()))
   public func listenTo(eventName: Swift.String, action: @escaping ((Any?) -> ()))

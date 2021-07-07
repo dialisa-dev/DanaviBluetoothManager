@@ -6,75 +6,119 @@
 	<dict>
 		<key>Headers/DanaviBluetoothManager-Swift.h</key>
 		<data>
-		UUo9LcRb/kx3GioUxfxIJ+AVaAY=
+		43mjtdEM6TbcvkJkmxvsAq3hGKk=
 		</data>
 		<key>Headers/DanaviBluetoothManager.h</key>
 		<data>
-		f59u5xE+g53D8LQYyr5X8K/82F0=
+		ITzyI8obI4nxC7b19iXvVy7+WGQ=
+		</data>
+		<key>Headers/HMBloodPressureModel.h</key>
+		<data>
+		SnApp93pGyws6OwURoqE9tWJx2c=
+		</data>
+		<key>Headers/HMECGModel.h</key>
+		<data>
+		H+d2XX8o4/1nVW0iGNVpIGKNLuc=
+		</data>
+		<key>Headers/HMOxygnModel.h</key>
+		<data>
+		L+KiQfafuwoJ+1UDV5ylckdsVKQ=
+		</data>
+		<key>Headers/HMTemperatureModel.h</key>
+		<data>
+		UzaHfwTlDrbIX9l8L9kTvSMQJbs=
+		</data>
+		<key>Headers/LT_iOS_CSS_SDK.h</key>
+		<data>
+		l67ChRtrPtTwdbHExcY6DoRwdhg=
+		</data>
+		<key>Headers/LibHealthCombineSDK.h</key>
+		<data>
+		nDtIQp9riPOYwwfiKP65UO3N7aQ=
+		</data>
+		<key>Headers/SDKHealthMoniter.h</key>
+		<data>
+		TxChvpu3K9wkYp6Yix8eGFSKLlI=
+		</data>
+		<key>Headers/TH_MeasureDataObj.h</key>
+		<data>
+		sCMzUuh2SzDJa+k/PcAHmMAt35U=
+		</data>
+		<key>Headers/ThermometerBlueToohPtotocol.h</key>
+		<data>
+		0BNdKb+B+VxUgSV1G+1/uUZN1hI=
+		</data>
+		<key>Headers/ThermometerSDK.h</key>
+		<data>
+		Vdq/1EqO8nN6CtU3DH0GCiz2o14=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		s/M8c03ve4WaElXTobaybygWSZM=
+		s0hDm3HPUaU5c9QtL9ir1INBIvU=
+		</data>
+		<key>LibHealthCombine.bundle/BsVal.db</key>
+		<data>
+		3IEKDcVyQqMeb4Vtcdg6z+ziJvc=
 		</data>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm.swiftdoc</key>
 		<data>
-		jMo3VMp2tLrmbyV952kr04v74Gk=
+		yuFLWicAf9WXtwYfiO+OeqsokWk=
 		</data>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm.swiftinterface</key>
 		<data>
-		3unnY8aQA6MbxECO3u1rLp1S/pc=
+		TJAU8nCKw32xCrteA1IYQwkDQsU=
 		</data>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm.swiftmodule</key>
 		<data>
-		wKm4xY6l8X2bSO9HGKBsjhfTJyU=
+		M8QmcqW761KHRN2/zop65MzPLy0=
 		</data>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		YHGdrEgv8r+7hbhWXKAGeIpo+as=
+		jzOJcSA487ZvuzpatWZnw5u0DEQ=
 		</data>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		rKAN/OOmfhdkuX0F7eDRBHdNgVk=
+		D8hyEbYgQb+ReCfKKuNLYs5ziY4=
 		</data>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		QZ3P8hY8bgYAn4fj4HWDnGyGjwc=
+		bK7wwMgSZXSO0+EraSYTfe7cELQ=
 		</data>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		YHGdrEgv8r+7hbhWXKAGeIpo+as=
+		jzOJcSA487ZvuzpatWZnw5u0DEQ=
 		</data>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		rKAN/OOmfhdkuX0F7eDRBHdNgVk=
+		D8hyEbYgQb+ReCfKKuNLYs5ziY4=
 		</data>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		QZ3P8hY8bgYAn4fj4HWDnGyGjwc=
+		bK7wwMgSZXSO0+EraSYTfe7cELQ=
 		</data>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<data>
-		jMo3VMp2tLrmbyV952kr04v74Gk=
+		yuFLWicAf9WXtwYfiO+OeqsokWk=
 		</data>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/armv7-apple-ios.swiftinterface</key>
 		<data>
-		3unnY8aQA6MbxECO3u1rLp1S/pc=
+		TJAU8nCKw32xCrteA1IYQwkDQsU=
 		</data>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<data>
-		wKm4xY6l8X2bSO9HGKBsjhfTJyU=
+		M8QmcqW761KHRN2/zop65MzPLy0=
 		</data>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/armv7.swiftdoc</key>
 		<data>
-		jMo3VMp2tLrmbyV952kr04v74Gk=
+		yuFLWicAf9WXtwYfiO+OeqsokWk=
 		</data>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/armv7.swiftinterface</key>
 		<data>
-		3unnY8aQA6MbxECO3u1rLp1S/pc=
+		TJAU8nCKw32xCrteA1IYQwkDQsU=
 		</data>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/armv7.swiftmodule</key>
 		<data>
-		wKm4xY6l8X2bSO9HGKBsjhfTJyU=
+		M8QmcqW761KHRN2/zop65MzPLy0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -87,187 +131,308 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			UUo9LcRb/kx3GioUxfxIJ+AVaAY=
+			43mjtdEM6TbcvkJkmxvsAq3hGKk=
 			</data>
 			<key>hash2</key>
 			<data>
-			J7j3ayu/6FPPUFfoQxLpagRG+8ZaM9ByD+/q10CQv74=
+			6q3PUzuMjMpqzBDyki/oJ7NsICQbia+KSWr1jizqXe4=
 			</data>
 		</dict>
 		<key>Headers/DanaviBluetoothManager.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			f59u5xE+g53D8LQYyr5X8K/82F0=
+			ITzyI8obI4nxC7b19iXvVy7+WGQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			V6I/nv1JhI6lx5q6jBJltkr5Tgh3hzoB8XynAGvxg/E=
+			JVqNxtK7Xu6eOeOQFCXTrYhEbEVgEXtmvBBXMarOd7M=
+			</data>
+		</dict>
+		<key>Headers/HMBloodPressureModel.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			SnApp93pGyws6OwURoqE9tWJx2c=
+			</data>
+			<key>hash2</key>
+			<data>
+			bDDbY8lDi8+XXKn4Lddi47aT6nQ5zObITr9Zost32is=
+			</data>
+		</dict>
+		<key>Headers/HMECGModel.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			H+d2XX8o4/1nVW0iGNVpIGKNLuc=
+			</data>
+			<key>hash2</key>
+			<data>
+			0QfcnaEJ8paRTUYGDG8VsUIRSzSI/9lmCUxeTMpo34U=
+			</data>
+		</dict>
+		<key>Headers/HMOxygnModel.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			L+KiQfafuwoJ+1UDV5ylckdsVKQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			KFH6PIwgnZV0USP+voGqDQ3330EQ9JOu+iZPtS2lnrU=
+			</data>
+		</dict>
+		<key>Headers/HMTemperatureModel.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			UzaHfwTlDrbIX9l8L9kTvSMQJbs=
+			</data>
+			<key>hash2</key>
+			<data>
+			JnCJxAeOfY/H1L1Co/l3NtJI7JRc3j1OZl/RY1o+bVw=
+			</data>
+		</dict>
+		<key>Headers/LT_iOS_CSS_SDK.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			l67ChRtrPtTwdbHExcY6DoRwdhg=
+			</data>
+			<key>hash2</key>
+			<data>
+			bjIaUtjgO/hO70S0d6Yop9nGybadBDNXgURHEAudUxQ=
+			</data>
+		</dict>
+		<key>Headers/LibHealthCombineSDK.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			nDtIQp9riPOYwwfiKP65UO3N7aQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			PO+9364A6gUMO9YOSpFU95kBSEwSnYSU0chWvu6IaqM=
+			</data>
+		</dict>
+		<key>Headers/SDKHealthMoniter.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			TxChvpu3K9wkYp6Yix8eGFSKLlI=
+			</data>
+			<key>hash2</key>
+			<data>
+			JU11kKtR6fPTxMkUXe3l8uuDIsJ2zM286tg4QgWKm3I=
+			</data>
+		</dict>
+		<key>Headers/TH_MeasureDataObj.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			sCMzUuh2SzDJa+k/PcAHmMAt35U=
+			</data>
+			<key>hash2</key>
+			<data>
+			7hyiOOYOUlw973cDmVj6Lj8xJaUdjqg+NHRQtAwIfnc=
+			</data>
+		</dict>
+		<key>Headers/ThermometerBlueToohPtotocol.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			0BNdKb+B+VxUgSV1G+1/uUZN1hI=
+			</data>
+			<key>hash2</key>
+			<data>
+			QoxUA/jyUDCJiZXa9ir/TiWmFUhxtAj+fgQYgO2oNCk=
+			</data>
+		</dict>
+		<key>Headers/ThermometerSDK.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Vdq/1EqO8nN6CtU3DH0GCiz2o14=
+			</data>
+			<key>hash2</key>
+			<data>
+			pA1eHOL2DQHiZ0NRBxfq18BAq6yS5JVQoTjUlQqEaQc=
+			</data>
+		</dict>
+		<key>LibHealthCombine.bundle/BsVal.db</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			3IEKDcVyQqMeb4Vtcdg6z+ziJvc=
+			</data>
+			<key>hash2</key>
+			<data>
+			WYWxHCKmQyoa+hTmGwVtpRLkxFufspF0+WAdT20ab2A=
 			</data>
 		</dict>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			jMo3VMp2tLrmbyV952kr04v74Gk=
+			yuFLWicAf9WXtwYfiO+OeqsokWk=
 			</data>
 			<key>hash2</key>
 			<data>
-			RZ5lr59OdlKGs0RTudAefK4/pfGY4h7C9fo2UDMrxHQ=
+			NMkfp0VxgDBJf8xJIocUD5cK8CMyJKaT9ZVskClAxlM=
 			</data>
 		</dict>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			3unnY8aQA6MbxECO3u1rLp1S/pc=
+			TJAU8nCKw32xCrteA1IYQwkDQsU=
 			</data>
 			<key>hash2</key>
 			<data>
-			ixMiV6ARuqj8xV7E4EOZukYgDrg29sK9NUKxrbp+Lso=
+			GarcXWD4JMV8q9AE3puRvhxsUpGQaS+yVGisqdoso+U=
 			</data>
 		</dict>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			wKm4xY6l8X2bSO9HGKBsjhfTJyU=
+			M8QmcqW761KHRN2/zop65MzPLy0=
 			</data>
 			<key>hash2</key>
 			<data>
-			tkuehcIIXUUsBJB0b/yADHEvt5WX0XSouKz6BTEc+pk=
+			4sPD92V/dTV+wpAS25qILWWQGPyY71jvvI09pPRmFgI=
 			</data>
 		</dict>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			YHGdrEgv8r+7hbhWXKAGeIpo+as=
+			jzOJcSA487ZvuzpatWZnw5u0DEQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			xQ+6QzSAl/LPapABFTWMJ7/ajkbTg4rURzvkQdYdY3w=
+			+vJ/8JcbTA2Gz+85TlrzQO9stxH8cinTrndXlo/qyow=
 			</data>
 		</dict>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			rKAN/OOmfhdkuX0F7eDRBHdNgVk=
+			D8hyEbYgQb+ReCfKKuNLYs5ziY4=
 			</data>
 			<key>hash2</key>
 			<data>
-			hX+10TUZns5t8Iu4YodYqIc7CwHqib3uOKps5XLPr6g=
+			yyt0zLqo3jyknP67ggLrcMOPVbGGDw6oBze8iWIH1kM=
 			</data>
 		</dict>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			QZ3P8hY8bgYAn4fj4HWDnGyGjwc=
+			bK7wwMgSZXSO0+EraSYTfe7cELQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			DvS2fmstQ87bVM0iNWGrDLvteMKqeBbjA7N7Y0WeEw0=
+			ikldliBB9n3gpEF4nX7/fV/LITAQX133pMoxrWEzGSY=
 			</data>
 		</dict>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			YHGdrEgv8r+7hbhWXKAGeIpo+as=
+			jzOJcSA487ZvuzpatWZnw5u0DEQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			xQ+6QzSAl/LPapABFTWMJ7/ajkbTg4rURzvkQdYdY3w=
+			+vJ/8JcbTA2Gz+85TlrzQO9stxH8cinTrndXlo/qyow=
 			</data>
 		</dict>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			rKAN/OOmfhdkuX0F7eDRBHdNgVk=
+			D8hyEbYgQb+ReCfKKuNLYs5ziY4=
 			</data>
 			<key>hash2</key>
 			<data>
-			hX+10TUZns5t8Iu4YodYqIc7CwHqib3uOKps5XLPr6g=
+			yyt0zLqo3jyknP67ggLrcMOPVbGGDw6oBze8iWIH1kM=
 			</data>
 		</dict>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			QZ3P8hY8bgYAn4fj4HWDnGyGjwc=
+			bK7wwMgSZXSO0+EraSYTfe7cELQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			DvS2fmstQ87bVM0iNWGrDLvteMKqeBbjA7N7Y0WeEw0=
+			ikldliBB9n3gpEF4nX7/fV/LITAQX133pMoxrWEzGSY=
 			</data>
 		</dict>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			jMo3VMp2tLrmbyV952kr04v74Gk=
+			yuFLWicAf9WXtwYfiO+OeqsokWk=
 			</data>
 			<key>hash2</key>
 			<data>
-			RZ5lr59OdlKGs0RTudAefK4/pfGY4h7C9fo2UDMrxHQ=
+			NMkfp0VxgDBJf8xJIocUD5cK8CMyJKaT9ZVskClAxlM=
 			</data>
 		</dict>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/armv7-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			3unnY8aQA6MbxECO3u1rLp1S/pc=
+			TJAU8nCKw32xCrteA1IYQwkDQsU=
 			</data>
 			<key>hash2</key>
 			<data>
-			ixMiV6ARuqj8xV7E4EOZukYgDrg29sK9NUKxrbp+Lso=
+			GarcXWD4JMV8q9AE3puRvhxsUpGQaS+yVGisqdoso+U=
 			</data>
 		</dict>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			wKm4xY6l8X2bSO9HGKBsjhfTJyU=
+			M8QmcqW761KHRN2/zop65MzPLy0=
 			</data>
 			<key>hash2</key>
 			<data>
-			tkuehcIIXUUsBJB0b/yADHEvt5WX0XSouKz6BTEc+pk=
+			4sPD92V/dTV+wpAS25qILWWQGPyY71jvvI09pPRmFgI=
 			</data>
 		</dict>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/armv7.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			jMo3VMp2tLrmbyV952kr04v74Gk=
+			yuFLWicAf9WXtwYfiO+OeqsokWk=
 			</data>
 			<key>hash2</key>
 			<data>
-			RZ5lr59OdlKGs0RTudAefK4/pfGY4h7C9fo2UDMrxHQ=
+			NMkfp0VxgDBJf8xJIocUD5cK8CMyJKaT9ZVskClAxlM=
 			</data>
 		</dict>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/armv7.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			3unnY8aQA6MbxECO3u1rLp1S/pc=
+			TJAU8nCKw32xCrteA1IYQwkDQsU=
 			</data>
 			<key>hash2</key>
 			<data>
-			ixMiV6ARuqj8xV7E4EOZukYgDrg29sK9NUKxrbp+Lso=
+			GarcXWD4JMV8q9AE3puRvhxsUpGQaS+yVGisqdoso+U=
 			</data>
 		</dict>
 		<key>Modules/DanaviBluetoothManager.swiftmodule/armv7.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			wKm4xY6l8X2bSO9HGKBsjhfTJyU=
+			M8QmcqW761KHRN2/zop65MzPLy0=
 			</data>
 			<key>hash2</key>
 			<data>
-			tkuehcIIXUUsBJB0b/yADHEvt5WX0XSouKz6BTEc+pk=
+			4sPD92V/dTV+wpAS25qILWWQGPyY71jvvI09pPRmFgI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
