@@ -24,20 +24,17 @@ public struct EmittedEvent {
 public struct Temperature {
     public var temperature: Double = 0.0;
     public var unit: String = "fahrenheit";
-    public var timestamp: Int64 = 0;
 }
 
 public struct OximeterMeasurement {
     public var bloodOxygen: Int = 0;
     public var heartRate: Int = 0;
     public var pi: Int = 0;
-    public var timestamp: Int64 = 0;
 }
 
 public struct SpirometerMeasurement {
     public var fev1: Double = 0.0;
     public var pef: Double = 0.0;
-    public var timestamp: Int64 = 0;
 }
 ```
 
@@ -86,15 +83,11 @@ On successful measurement, it will send ```EmittedEvent(mac: "49319DAB-B10E-A065
 
 #### writeToFile
 
-Setting this parameter to ```true``` will write the oximeter measurement to a temporary file with format ```Blood Oxygen Level, Heart Rate, Pi, Time in ms\n```. Default value is ```false```. For example, the temporary file will look like this,
+Setting this parameter to ```true``` will write the oximeter measurement to a temporary file with format ```Blood Oxygen Level, Heart Rate, Pi\n```. Default value is ```false```. For example, the temporary file will look like this,
 ```
-98,85,6,1608317817015
-98,85,6,1608317817800
-98,85,6,1608317818608
-98,85,6,1608317819407
-99,85,6,1608317820217
-99,85,6,1608317821016
-99,89,6,1608317821827
+99,86,15
+99,87,5
+99,87,5
 ```
 
 #### withTimer
@@ -121,13 +114,7 @@ public func retrieveOximeterData() -> String
 ```
 Call this function to retrieve oximeter data from the temporary file. In order for this to work, must set ```writeToFile``` parameter in ```startDanaviOximeterMeasurement``` function to ```true```. On failure, it will return ```-1,-1,-1```.
 
-### 9. Delete oximeter data file
-```
-public func deleteOximeterData() -> Bool
-```
-Call this function to delete oximeter data temporary file. On successful delete, return ```true```.
-
-### 10. Start DANAVI Spirometer measurement
+### 9. Start DANAVI Spirometer measurement
 ```
 public func startDanaviSpirometerMeasurement()
 ```
@@ -314,7 +301,7 @@ class ViewController: UIViewController {
         if (event.value as! String == "PoweredOn") {
             // IF BLUETOOTH STATE IS POWERED ON, THEN READY TO SCAN DEVICES
             //bluetoothManager.scanDevices(deviceType: DANAVI_EAR_THERMOMETER_TYPE, timeout: 5.0)
-            bluetoothManager.scanDevices(deviceType: DANAVI_OXIMETER_TYPE, timeout: 5.0)
+            bluetoothManager.scanDevices(deviceType: DANAVI_SPIROMETER_TYPE, timeout: 5.0)
         } else {
             // NEED TO HANDLE -- BLUETOOTH STATE IS NOT ON
         }
@@ -388,14 +375,6 @@ class ViewController: UIViewController {
         // PROMPT USER THAT THEY HAVE FINISHED THE MEASUREMENT
         let data = bluetoothManager.retrieveOximeterData().split(whereSeparator: \.isNewline)
         print("Total recorded measurement: \(data.count)\n\(data)")
-        
-        // PROCESS DATA
-        
-        // AFTER FINISH PROCESSING, DELETE THE TEMP FILE
-        let deleted = bluetoothManager.deleteOximeterData()
-        if (deleted) {
-            print("Successfully deleted oximeter data")
-        }
     }
     
     func handleSpirometerMeasurementTaken(event: EmittedEvent) {
@@ -408,4 +387,5 @@ class ViewController: UIViewController {
         print("FEV1: \(measurement.fev1), PEF: \(measurement.pef)")
     }
 }
+
 ```
